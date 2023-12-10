@@ -23,8 +23,9 @@ public class Application {
 		return args -> {
 			Stream.of("do laundry", "finish the homework", "finish housework").forEach(title -> {
 				Task task = new Task(title, title + " right now", new Date());
+				taskRepository.save(task);
 			});
-		}
+		};
 	}
 
 }
