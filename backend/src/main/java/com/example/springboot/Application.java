@@ -1,13 +1,12 @@
 package com.example.springboot;
 
-import model.Task;
+import com.example.springboot.model.Task;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import repository.TaskRepository;
+import com.example.springboot.repository.TaskRepository;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.stream.Stream;
 
@@ -25,6 +24,7 @@ public class Application {
 				Task task = new Task(title, title + " right now", new Date());
 				taskRepository.save(task);
 			});
+			taskRepository.findAll().forEach(task -> System.out.println(task));
 		};
 	}
 

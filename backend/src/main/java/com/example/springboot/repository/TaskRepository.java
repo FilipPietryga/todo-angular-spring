@@ -1,6 +1,6 @@
-package repository;
+package com.example.springboot.repository;
 
-import model.Task;
+import com.example.springboot.model.Task;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,9 @@
-package controller;
+package com.example.springboot.controller;
 
-import model.Task;
+import com.example.springboot.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import repository.TaskRepository;
+import com.example.springboot.repository.TaskRepository;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import java.util.List;
 @CrossOrigin(origins="https://localhost:4200")
 public class TaskController {
 
+    @Autowired
     private final TaskRepository taskRepository;
 
-    @Autowired
     public TaskController(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
