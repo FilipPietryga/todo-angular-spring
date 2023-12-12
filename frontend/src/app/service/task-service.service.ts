@@ -4,7 +4,7 @@ import { Task } from '../model/task';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class UserService {
+export class TaskService {
 
   private url: string;
 
