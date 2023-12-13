@@ -1,1 +1,34 @@
-<p>task-form works!</p>
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" [(ngModel)]="task.title" 
+      class="form-control" 
+      id="title" 
+      name="title" 
+      placeholder="Enter title of your task"
+      required #name="ngModel">
+  </div>
+  <div [hidden]="!name.pristine" class="alert alert-danger">Title is required</div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" [(ngModel)]="task.description" 
+      class="form-control" 
+      id="description" 
+      name="description" 
+      placeholder="Enter the description of your task"
+      required #name="ngModel">
+  </div>
+  <div [hidden]="!name.pristine" class="alert alert-danger">Description is required</div>
+  <div class="form-group">
+    <label for="deadline">Deadline</label>
+    <input type="text" [(ngModel)]="task.deadline" 
+      class="form-control" 
+      id="deadline" 
+      name="deadline" 
+      placeholder="Enter your deadline address"
+      required #email="ngModel">
+    <div [hidden]="!email.pristine" class="alert alert-danger">Deadline is required</div>
+  </div>
+  <button type="submit" [disabled]="!userForm.form.valid" 
+    class="btn btn-info">Submit</button>
+</form>

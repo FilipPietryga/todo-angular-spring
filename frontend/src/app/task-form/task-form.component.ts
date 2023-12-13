@@ -8,7 +8,7 @@ import { Task } from '../model/task';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.css']
 })
-export class UserFormComponent {
+export class TaskFormComponent {
 
   task: Task;
 
